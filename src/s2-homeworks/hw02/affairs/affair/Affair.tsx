@@ -13,7 +13,7 @@ type AffairPropsType = {
 function Affair(props: AffairPropsType) {
     const deleteCallback = () => {
         // need to fix
-        console.log('удали пжлст')
+
         props.deleteAffairCallback(props.affair._id)
     }
 
