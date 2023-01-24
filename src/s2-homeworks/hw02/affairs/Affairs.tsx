@@ -74,6 +74,7 @@ function Affairs(props: AffairsPropsType) {
                 </button>
             </div>
             <div className={s.affairs}>{mappedAffairs}</div>
+            <div className={s.affairsBorder}></div>
         </div>
     )
 }

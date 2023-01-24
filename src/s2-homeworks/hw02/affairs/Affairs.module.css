@@ -2,6 +2,7 @@
     display: flex;
     gap: 24px;
     margin-bottom: 32px;
+    padding: 10px 0 10px 100px;
 }
 
 .all {
@@ -21,6 +22,7 @@
 }
 
 .button {
+    margin-top: 25px;
     padding: 5px 15px;
 
     background: transparent;
@@ -51,5 +53,12 @@
     display: flex;
     gap: 17px;
     flex-wrap: wrap;
-    max-width: 450px;
+    max-width: 600px;
+    padding: 10px 0 0px 100px;
+}
+
+
+.affairsBorder {
+    margin-top: 60px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }

@@ -2,21 +2,40 @@
 }
 
 .inputAndButtonContainer {
+    display: flex;
+    padding:  0 0 10px 100px;
 }
 
 .error {
+    color: red;
+    margin-top: 5px;
 }
 
 .input {
+    width: 500px;
+    height: 33px;
 }
 
 .input:focus {
+    padding: 0 0 0 7px;
+    color: #000000;
+    font-weight: bold;
 }
 
 .errorInput {
+    width: 500px;
+    height: 33px;
+    border: 1px solid red;
 }
 
 .button {
+    width: 65px;
+    height: 33px;
+    margin-left: 20px;
+    background: #0064d9;
+    border-radius: 3px;
+    color: black;
+    font-weight: bold;
 }
 
 .button:focus {
@@ -29,7 +48,17 @@
 }
 
 .text {
+    padding:  30px 0 10px 100px;
+    color: #000000;
 }
 
 .greeting {
+    padding:  0 0 10px 100px;
+    font-weight: 600;
+}
+
+
+.borderBottom {
+    margin-top: 150px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
