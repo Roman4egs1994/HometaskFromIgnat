@@ -27,9 +27,6 @@ function Clock() {
             setTimerId(undefined)
         }
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
-
-
-
     }
 
     const onMouseEnter = () => { // пишут студенты // показать дату если наведена мышка
@@ -41,22 +38,26 @@ function Clock() {
 
 
     //настройка часов, минут, секунд
-    // const formatTime = new Intl.DateTimeFormat("en-US",{
-    //     hour: "numeric",
-    //     hour12: false,
-    //     minute: "numeric",
-    //     second: "numeric"
-    // })
-    const stringTime = date.toLocaleTimeString() || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
+    const formatTime = new Intl.DateTimeFormat("en-US",{
+        hour: "numeric",
+        hour12: false,
+        minute: "numeric",
+        second: "numeric"
+    })
+
+    // toLocaleTimeString()
+    const stringTime = formatTime.format(date) || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
 
 
     //Настройка дня, месяца, года (скрытое)
-    // const formatDate = new Intl.DateTimeFormat("en-US",{
-    //     day: "2-digit",
-    //     month: 'numeric',
-    //     year: "numeric"
-    // })
-    const stringDate = date.toLocaleDateString() || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const formatDate = new Intl.DateTimeFormat("en-US",{
+        day: "2-digit",
+        month: 'numeric',
+        year: "numeric"
+    })
+
+    // date.toLocaleDateString()
+    const stringDate =  formatDate.format(date) || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // const stringTime = 'date->time' || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
     // const stringDate = 'date->date' || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02
