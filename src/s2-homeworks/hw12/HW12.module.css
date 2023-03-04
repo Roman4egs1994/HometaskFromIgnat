@@ -19,5 +19,6 @@ html {
 }
 
 .select {
-
+    color: var(--color);
+    background-color: var(--background);
 }
