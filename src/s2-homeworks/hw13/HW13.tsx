@@ -23,7 +23,7 @@ const HW13 = () => {
     const send = (x?: boolean | null) => () => {
         const url = x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-                : 'https://samurai.it-incubator.io/api/3.0'
+                : 'https://samurai.it-incubator.io/api/3.0/homework/test'
 
         setCode('')
         setImage('')
@@ -33,27 +33,27 @@ const HW13 = () => {
         axios
             .post(url, {success: x})
             .then((res) => {
-                setInfo(res.data.info)
-                setCode('Код 200!')
+                setCode(`Код ${res.status}!`)
                 setImage(success200)
-                setText(res.data.errorText)
-
                 // дописать
-
+                setInfo(res.data.info)
+                setText(res.data.errorText)
             })
             .catch((e) => {
-                setText(e?.response?.data?.errorText||e.message)
-                setInfo(e?.response?.data?.info||e.name)
                 // дописать
-                if(e.response.status === 400) {
-                    setCode('Ошибка 400!')
-                    setImage(error400)
-                } else if (e.response.status === 500) {
-                    setCode('Ошибка 500!')
-                    setImage(error500)
+                if (e.response.status) {
+                    console.log(e.response.data.errorText)
+                    setCode(`Ошибка ${e.response.status}!!`)
+                    setImage(e.response.status === 500 ? error500 : error400)
+                    setInfo(e.response.data.info)
+                    setText(e.response.data.errorText)
+
                 } else {
-                    setCode('Error!')
+                    // console.log(e.name, e.message)
                     setImage(errorUnknown)
+                    setCode('Error')
+                    setInfo(e.name)
+                    setText(e.message)
                 }
             })
     }
