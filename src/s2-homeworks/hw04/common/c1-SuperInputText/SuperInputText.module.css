@@ -2,28 +2,19 @@
 }
 
 .input {
-
-    width: 300px;
-    height: 33px;
 }
 
 .inputWrapper {
-    position: relative;
 }
 
 .superInput {
 }
 
 .errorInput {
-    border: 1px solid red;
 }
 
 .errorInput:focus {
 }
 
 .error {
-    position: absolute;
-    color: red;
-    left: 0px;
-    top: -20px
 }

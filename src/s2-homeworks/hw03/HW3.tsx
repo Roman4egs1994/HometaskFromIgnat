@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { v1 } from 'uuid'
 import s2 from '../../s1-main/App.module.css'
 import GreetingContainer from './GreetingContainer'
-import user from "../hw08/User";
 
 /*
 * 1 - описать тип UserType
@@ -24,9 +23,16 @@ export type UserType = {
     name: string // need to fix any
 }
 
-export const pureAddUserCallback = (name: string, setUsers: (users: UserType[])=>void, users: UserType[]) => { // need to fix any
-    const user = {_id: v1(), name: name}
+export const pureAddUserCallback = (name: string, setUsers: (users: UserType[])=> void, users: UserType[]) => { // need to fix any
+    const user = {
+        _id: v1(),
+        name: name
+        // need to fix
+        // нужно создать новый объект соответствующий типу UserType
+        // не забыть   сгенеририовать _id и вставить пришедший в функцию name
+    }
     setUsers([...users, user])
+    //засетайЮзеров([...старые users, и наш новый user])
 }
 
 const HW3 = () => {
@@ -38,7 +44,7 @@ const HW3 = () => {
 
     return (
         <div id={'hw3'}>
-            <div className={s2.hwTitle}>Hometask №3</div>
+            <div className={s2.hwTitle}>Homework #3</div>
             {/*для автоматической проверки дз (не менять)*/}
 
             <div className={s2.hw}>

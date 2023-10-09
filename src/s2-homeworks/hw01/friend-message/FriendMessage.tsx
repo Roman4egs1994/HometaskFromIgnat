@@ -1,13 +1,13 @@
 import React from 'react'
 import s from './FriendMessage.module.css'
-import {MessagePropsType} from "../message/Message";
+import {MessageType} from "../HW1";
 
-
+type FriendMessageType = {
+    message: MessageType
+}
 // создать тип вместо any и отобразить приходящие данные
-
-
-
-const FriendMessage = (props: MessagePropsType) => {
+// ВСЕ ТОЖЕ САМОЕ, ЧТО И В КОМПОНЕНТЕ Message -ПОЭТОМУ ПОДСКАЗОК МЕНЬШЕ
+const FriendMessage = (props: FriendMessageType) => {
     return (
         <div
             id={'hw1-friend-message-' + props.message.id}
@@ -18,7 +18,6 @@ const FriendMessage = (props: MessagePropsType) => {
                     id={'hw1-friend-avatar-' + props.message.id}
                     // создаёт студент
                     src={props.message.user.avatar}
-                    alt="avatar"
                     //
                 />
                 <div className={s.friendText}>
@@ -27,7 +26,7 @@ const FriendMessage = (props: MessagePropsType) => {
                         className={s.friendName}
                     >
                         {/*создаёт студент*/}
-                        <p className={s.friendMessageText}>{props.message.user.name}</p>
+                        {props.message.user.name}
                         {/**/}
                     </div>
                     <pre
@@ -35,7 +34,7 @@ const FriendMessage = (props: MessagePropsType) => {
                         className={s.friendMessageText}
                     >
                         {/*создаёт студент*/}
-                        <p>{props.message.message.text}</p>
+                        {props.message.message.text}
                         {/**/}
                     </pre>
                 </div>
@@ -45,7 +44,7 @@ const FriendMessage = (props: MessagePropsType) => {
                 className={s.friendTime}
             >
                 {/*создаёт студент*/}
-                <p>{props.message.message.time}</p>
+                {props.message.message.time}
                 {/**/}
             </div>
         </div>

@@ -2,28 +2,10 @@
     --header_height: 60px;
 }
 
-.header {
-    height: 100px;
-    background-color: #ffffff;
-
-}
-
-
 .hw {
 
 }
 
 .hwTitle {
-    display: flex;
-    align-items: flex-end;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 22px;
-    line-height: 27px;
-    height: 100px;
-    background-color: #f4f6fa;
-    padding: 0 0 10px 100px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
 }

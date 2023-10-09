@@ -6,15 +6,11 @@ import React, {
 } from 'react'
 import s from './SuperRadio.module.css'
 
-type DefaultRadioPropsType = DetailedHTMLProps<
-    InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
->
+type DefaultRadioPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement>
 // тип пропсов обычного спана
-type DefaultSpanPropsType = DetailedHTMLProps<
-    HTMLAttributes<HTMLSpanElement>,
-    HTMLSpanElement
->
+type DefaultSpanPropsType = DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>,
+    HTMLSpanElement>
 
 type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
     options?: any[]
@@ -35,11 +31,10 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
                                                        ...restProps
                                                    }) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        // делают студенты
         if (onChangeOption) {
             onChangeOption(+e.currentTarget.value)
-            onChange && onChange(e);
         }
+        // делают студенты
     }
 
     const finalRadioClassName = s.radio + (className ? ' ' + className : '')
@@ -52,14 +47,12 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
                     id={id + '-input-' + o.id}
                     className={finalRadioClassName}
                     type={'radio'}
-                    // name, checked, value делают студенты
-                    //   name={o.name}
-                    //   checked={o.id === value}
-                    //   value={o.id}
-
                     name={name}
                     checked={o.id === value}
                     value={o.id}
+                    // name, checked, value делают студенты
+                    // http://htmlbook.ru/html/input/name
+                    //checked={o.id === ...может попробовать значение которое тянем из HW7?}
 
                     onChange={onChangeCallback}
                     {...restProps}
